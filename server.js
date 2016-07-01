@@ -21,7 +21,9 @@ http.createServer(function (request, response) {
     if (action) {
         action(request, response);
     }else {
-        response.writeHead(404);
+        //response.writeHead(404);
+        response.statusCode = 404;//修复bug
         response.end();
+        //console.log('ok');
     }
 }).listen(3000);
